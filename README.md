@@ -16,7 +16,7 @@ LED不正常，应该是跟寄存器设置有关，见下文
 
 ## 关于RTL8370N
 一个八口千兆交换机的芯片，集成了一个8051内核，可以控制控制交换机，开个Web管理啥的。  
-一日有幸在Google遇见它的Datasheet，是来自某“全球最大中文IT社区”下载区，神秘代码8157377。。
+一日有幸在Google遇见它的Datasheet，是来自某“全球最大中文IT社区”下载区，神秘代码8157377。。  
 复位时通过三个引脚可以控制怎么启动。大概有如下几种模式  
 ![boot-mode](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/boot-mode.png)  
 这三个引脚的位置如图  
@@ -27,10 +27,11 @@ LED不正常，应该是跟寄存器设置有关，见下文
 1.他们[官网](http://www.seapai.com.cn/a/gb2312/product/jiaohuanji/2014/0815/SP-SG08.html#hear2)写了芯片是RTL8370N  
 2.拆机图能看到有Flash空焊盘([参考这里](http://bbs.mydigit.cn/read.php?tid=974442))  
 3.淘宝78包邮  
-![a-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side.jpg)  
-![a-side-pin](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side-with-pinmap.bmp)  
-![b-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-b-side.jpg)  
+![a-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side.png)  
+![a-side-pin](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side-with-pinmap.png)  
+![b-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-b-side.png)  
 个人觉得仕牌其实算是挺良心的，以前的大小屌丝，还有这个交换机  
+另：SR8808M.bin固件直接提取于自淘宝一种140左右的八口铁壳网管交换机。  
 
 ## 改造方法
 购买清单：  
@@ -57,8 +58,8 @@ HOLD：R8（背面），典型10k，我没找到焊了个5.1k的也还没坏
 
 这是我个人的改造，为了看线路把绿油刮了，导致不敢用锡膏吹，  
 只能用烙铁一点一点焊，渣渣焊工无视就好了。。  
-![after-a](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/after-a.jpg)  
-![after-b](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/after-b.jpg)  
+![after-a](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/after-a.png)  
+![after-b](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/after-b.png)  
 
 ## 注意事项
 1.短接R18（空焊）即可恢复出厂设置，恢复后电脑设成192.168.1.2/24，  
