@@ -1,5 +1,5 @@
 # RTL8370N_switch_hacking
-试图以尽可能低的价格，搞到千兆网管交换机而做出的努力  
+试图以尽可能低的价格搞到好用的千兆网管交换机  
 写得有点乱，将就看吧  
 
 ## 目前进度
@@ -7,11 +7,12 @@
 端口状态在网页上能正常显示  
 ![web-status](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/web-status.png)  
 ![web-duplex](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/web-duplex.png)  
-试了下端口限速功能 可用 其他功能没测试环境也懒得测试  
-一段时间内不打算折腾了，遇到了瓶颈  
+试了下端口限速功能，可用。VLAN部分也测试过。   
+其他功能没测试环境也懒得测试  
 
 ### todo：  
 LED不正常，应该是跟寄存器设置有关，见下文  
+网页上显示的端口编号和机身上不一致，这个问题您买根儿记号笔改改就好了  
 其余功能还没测试  
 
 ## 关于RTL8370N
@@ -75,5 +76,13 @@ LED的几种控制模式是由寄存器控制的。。原机背面的eeprom备�
 1.EEPROM的存储格式：前两Byte代表有效长度，后面每4Bytes一组，代表寄存器的地址和要写入该地址的值；  
 2.跟LED有关的寄存器地址在0x1b26和0x1b27.（上面资料里RTL8370_reg.h中18620～18644行）  
 然后现在逆向无力只能坐等有SDK的大大扔一个LED使用Scan Mode Group A的固件来（趴  
+  
+## 一些简单的配置示例
+比如这有一个迅雷下载宝接在端口2，端口1是WAN，端口3-8是LAN  
+VLAN相关部分配置如下图   
+![xiazaibao-as-router-setting](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/xiazaibao-as-router-setting.png)  
+![single-arm-vlan](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/single-arm-vlan.png)  
+![single-arm-pvid](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/single-arm-pvid.png)  
+当然下载宝那个东西作路由器来用的话还缺一些包  
 
 
