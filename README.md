@@ -1,6 +1,13 @@
 # RTL8370N_switch_hacking
-试图以尽可能低的价格搞到好用的千兆网管交换机  
-写得有点乱，将就看吧  
+---
+这个repo应该不会更新了，也没什么可能更新的，关于RTL8370最近在试图用esp8266通过smi控制它，做了一堆Lua的绑定，这样用Lua就可以配置交换机了。  
+
+如果你想帮忙测试/开发，请移步[libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware)，你需要一块nodemcu或兼容的板子（淘宝20元以内就能搞定） 和一个RTL8370芯片的交换机  
+
+This repository is deprecated. I'm planning to use NodeMCU to controll RTL8370 via SMI, and I've already made some Lua bindings of their APIs.   
+See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), welcome PRs/Test/Issues. You may need a NodeMCU board and a RTL8370 switch.  
+
+
 
 ## 目前进度
 已经能打开网页界面了  
