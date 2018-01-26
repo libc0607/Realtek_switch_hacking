@@ -11,9 +11,9 @@
 其他功能没测试环境也懒得测试  
 
 ### todo：  
-LED不正常，应该是跟寄存器设置有关，见下文  
-网页上显示的端口编号和机身上不一致，这个问题您买根儿记号笔改改就好了  
-其余功能还没测试  
+LED不正常，因为LED的模式没配置对  
+网页上显示的端口编号和机身上不一致，这个问题您买根儿记号笔改改就好了  
+其余功能还没测试  
 
 ## 关于RTL8370N
 一个八口千兆交换机的芯片，集成了一个8051内核，可以控制控制交换机，开个Web管理啥的。  
@@ -27,7 +27,7 @@ LED不正常，应该是跟寄存器设置有关，见下文
 仕牌SP-SG08。原因：  
 1.他们[官网](http://www.seapai.com.cn/a/gb2312/product/jiaohuanji/2014/0815/SP-SG08.html#hear2)写了芯片是RTL8370N  
 2.拆机图能看到有Flash空焊盘([参考这里](http://bbs.mydigit.cn/read.php?tid=974442))  
-3.淘宝78包邮  
+3.淘宝78包邮（貌似..买不到了？  
 ![a-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side.png)  
 ![a-side-pin](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side-with-pinmap.png)  
 ![b-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-b-side.png)  
@@ -74,8 +74,10 @@ HOLD：R8（背面），典型10k，我没找到焊了个5.1k的也还没坏
 LED的几种控制模式是由寄存器控制的。。原机背面的eeprom备份出的内容为SP08-EEPROM.bin，仅供参考  
 在[@jiajun在Bitbucket里提供的资料](https://bitbucket.org/jiajun/rtl8xxx-switch)里得知 ：  
 1.EEPROM的存储格式：前两Byte代表有效长度，后面每4Bytes一组，代表寄存器的地址和要写入该地址的值；  
-2.跟LED有关的寄存器地址在0x1b26和0x1b27.（上面资料里RTL8370_reg.h中18620～18644行）  
-然后现在逆向无力只能坐等有SDK的大大扔一个LED使用Scan Mode Group A的固件来（趴  
+2.跟LED有关的寄存器地址在0x1b26和0x1b27.（上面资料里RTL8370_reg.h中18620～18644行）  
+现在倒是知道问题出在了什么地方，然而依然不知道它内置的8051怎么玩，也没有任何资料  
+懒得解决了...打算用esp8266+nodemcu推倒重来了，见[libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware)   
+
   
 ## 一些简单的配置示例
 比如这有一个迅雷下载宝接在端口2，端口1是WAN，端口3-8是LAN  
