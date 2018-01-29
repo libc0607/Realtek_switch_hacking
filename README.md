@@ -4,9 +4,12 @@
 
 如果你想帮忙测试/开发，请移步[libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware)，你需要一块nodemcu或兼容的板子（淘宝20元以内就能搞定） 和一个RTL8370芯片的交换机  
 
-This repository is deprecated. I'm planning to use NodeMCU to controll RTL8370 via SMI, and I've already made some Lua bindings of their APIs.   
-See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), welcome PRs/Test/Issues. You may need a NodeMCU board and a RTL8370 switch.  
+初步的效果见 [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY) 点亮LED  
 
+This repository is deprecated. I'm planning to use NodeMCU to controll RTL8370 via SMI, and I've already made some Lua bindings of their APIs.   
+See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), welcome PRs/Test/Issues. You may need a NodeMCU board and a RTL8370 switch.  
+
+LED blink demo at [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY)
 
 
 ## 目前进度
@@ -18,9 +21,13 @@ See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), w
 其他功能没测试环境也懒得测试  
 
 ### todo：  
+
 LED不正常，因为LED的模式没配置对  
+
 网页上显示的端口编号和机身上不一致，这个问题您买根儿记号笔改改就好了  
+
 其余功能还没测试  
+
 
 ## 关于RTL8370N
 一个八口千兆交换机的芯片，集成了一个8051内核，可以控制控制交换机，开个Web管理啥的。  
@@ -79,11 +86,17 @@ HOLD：R8（背面），典型10k，我没找到焊了个5.1k的也还没坏
 
 ## 关于LED
 LED的几种控制模式是由寄存器控制的。。原机背面的eeprom备份出的内容为SP08-EEPROM.bin，仅供参考  
+
 在[@jiajun在Bitbucket里提供的资料](https://bitbucket.org/jiajun/rtl8xxx-switch)里得知 ：  
+
 1.EEPROM的存储格式：前两Byte代表有效长度，后面每4Bytes一组，代表寄存器的地址和要写入该地址的值；  
+
 2.跟LED有关的寄存器地址在0x1b26和0x1b27.（上面资料里RTL8370_reg.h中18620～18644行）  
+
 现在倒是知道问题出在了什么地方，然而依然不知道它内置的8051怎么玩，也没有任何资料  
+
 懒得解决了...打算用esp8266+nodemcu推倒重来了，见[libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware)   
+
 
   
 ## 一些简单的配置示例
