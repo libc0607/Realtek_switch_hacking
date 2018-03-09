@@ -28,6 +28,8 @@ LED blink demo at [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY)
 楼主正努力抽空出第三版电路板，之前两版 LED 都莫名失控。。搞完肯定开源（Flag  
 
 
+![My-Board-V2](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/Board-V2.png)  
+
 
 
 
