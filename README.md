@@ -11,8 +11,27 @@ See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), w
 
 LED blink demo at [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY)
 
+## SMI got no ACK? / Can't open 192.168.1.1?  
 
-## 目前进度
+楼主自己也试着做了 RTL8370N 的板子（见下图，渣布线轻喷但是ひでり真可爱啊），其实第一第二版基本的交换功能都能用，但是一些高级功能残废，表现为当试图从 Flash 启动时可以判断程序已成功加载但却无法打开 192.168.1.1，或是使用 SMI 总线控制时芯片不发送 ACK。  
+
+楼主经过多次瞎 jb 分析，猜测是芯片的某几个模块默认状态下被锁定了，需要写入像密码一样的东西才能解锁全部姿势。可能是被用于保护利益之类的。   
+
+而考虑到生产时的批量操作的可行性，以及 SR8808M 的迷之 4 Pin 引出 ，猜测 SP-08 的 EEPROM 里应该是包含这些东西，并且解锁方式之一可以是通过上电加载 EEPROM 。  
+
+所以大概思路就是：找一片 24c08，写入，然后将下文三个 pin 设置为 EEPROM to register 模式。  
+
+楼主自己打板贴的是汕头产的芯片（笑），之前只能当傻瓜交换机用，一直收不到 ACK 。今晚楼主试着用这种思路测了一下，上电启动后连接 SMI，愉快地收到了芯片的 ACK。估计 Flash 启动也应该能行吧，有空测试完再更新下。  
+
+啥资料都没有真是心累。。（瘫  
+
+楼主正努力抽空出第三版电路板，之前两版 LED 都莫名失控。。搞完肯定开源（Flag  
+
+
+
+
+
+## （直接焊 Flash 法的）目前进度
 已经能打开网页界面了  
 端口状态在网页上能正常显示  
 ![web-status](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/web-status.png)  
@@ -31,9 +50,9 @@ LED不正常，因为LED的模式没配置对  
 
 ## 关于RTL8370N
 一个八口千兆交换机的芯片，集成了一个8051内核，可以控制控制交换机，开个Web管理啥的。  
-一日有幸在Google遇见它的Datasheet，是来自某“全球最大中文IT社区”下载区，神秘代码8157377。。  
+一日有幸在Google遇见它的Datasheet，是来自某“全球最大中文IT社区”下载区，神秘代码8157377。。  
 复位时通过三个引脚可以控制怎么启动。大概有如下几种模式  
-![boot-mode](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/boot-mode.png)  
+![Datasheets-are-in-file-branch](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/boot-mode.png)  
 这三个引脚的位置如图  
 ![pinmap](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/datasheet-pinmap.png)  
 
@@ -45,7 +64,7 @@ LED不正常，因为LED的模式没配置对  
 ![a-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side.png)  
 ![a-side-pin](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-a-side-with-pinmap.png)  
 ![b-side](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/seapai-b-side.png)  
-个人觉得仕牌其实算是挺良心的，以前的大小屌丝，还有这个交换机  
+
 另：SR8808M.bin固件直接提取于自淘宝一种140左右的八口铁壳网管交换机。  
 
 ## 改造方法
