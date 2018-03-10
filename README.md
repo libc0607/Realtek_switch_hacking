@@ -15,20 +15,27 @@ LED blink demo at [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY)
 
 楼主自己也试着做了 RTL8370N 的板子（见下图，渣布线轻喷但是ひでり真可爱啊），其实第一第二版基本的交换功能都能用，但是一些高级功能残废，表现为当试图从 Flash 启动时可以判断程序已成功加载但却无法打开 192.168.1.1，或是使用 SMI 总线控制时芯片不发送 ACK。  
 
-楼主经过多次瞎 jb 分析，猜测是芯片的某几个模块默认状态下被锁定了，需要写入像密码一样的东西才能解锁全部姿势。可能是被用于保护利益之类的。   
+楼主经过自己的多次**瞎 jb 分析**，猜测是芯片的某几个模块默认状态下无法工作（被锁定了？）。可能是被用于保护利益之类的（？）。   
 
-而考虑到生产时的批量操作的可行性，以及 SR8808M 的迷之 4 Pin 引出 ，猜测 SP-08 的 EEPROM 里应该是包含这些东西，并且解锁方式之一可以是通过上电加载 EEPROM 。  
+而考虑到生产时的批量操作的可行性，以及 SR8808M 的迷之 4 Pin 引出 ，猜测 SP-08 的 EEPROM 里应该是包含（特定模块的初始化代码？/解锁特定模块的密码？/内置 8051 的 一部分ROM？），并且应该是在上电加载 EEPROM 的时候完成了这个过程。 SR8808M 的固件内有可能并没有这部分初始化代码（或因为判断不是他们生产的板子所以不启动？），导致打不开 192.168.1.1 。  
+
+只是目前不太清楚这部分（初始化？/解锁？/写入 ROM ？）是只需要一次还是每次上电都要，因为 SP-08 那个拆掉 EEPROM 后只连接 Flash 也可以进 192.168.1.1 。  
 
 所以大概思路就是：找一片 24c08，写入，然后将下文三个 pin 设置为 EEPROM to register 模式。  
+
+RTL8370N 在将 EEPROM 里的数据加载到 Register 中之后， 会自动切换回 SMI 总线模式。  
 
 楼主自己打板贴的是汕头产的芯片（笑），之前只能当傻瓜交换机用，一直收不到 ACK 。今晚楼主试着用这种思路测了一下，上电启动后连接 SMI，愉快地收到了芯片的 ACK。估计 Flash 启动也应该能行吧，有空测试完再更新下。  
 
 啥资料都没有真是心累。。（瘫  
 
-楼主正努力抽空出第三版电路板，之前两版 LED 都莫名失控。。搞完肯定开源（Flag  
+楼主正努力抽空出第三版电路板，之前两版 LED 都莫名失控，想改回最简单的 Parallel LED 模式，并且只留一路 3.3v 电源。。。。搞完肯定开源（Flag  
 
 
-![My-Board-V2](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/Board-V2.png)  
+![My-Board-V2-1](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/Board-V2-2d.png)  
+
+![My-Board-V2-2](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/Board-V2.png)  
+
 
 
 
