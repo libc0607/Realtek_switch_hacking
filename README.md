@@ -12,6 +12,15 @@ See [libc0607/nodemcu-firmware](https://github.com/libc0607/nodemcu-firmware), w
 LED blink demo at [YouTube](https://www.youtube.com/watch?v=TsPTUKKPerY)
 
 
+关于本分支下的数据手册来源：
+ - RTL8367S RTL8367N 来自 逆天 PCB http://bbs.ntpcb.com 
+ - RTL8370(M) 以及其他部分路由 SoC 手册 来自 CSDN
+ - 标有形如 C***** 代号的 来自立创商城
+ - 其余来自于 Google （未记录具体来源）
+ 
+全部资料收集自互联网，意在学习相关硬件技术。如果违反了什么什么协议，请开个 issue 通知删除，带来不便非常抱歉！
+
+
 ## 目前进度
 已经能打开网页界面了  
 端口状态在网页上能正常显示  
