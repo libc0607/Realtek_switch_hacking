@@ -37,6 +37,8 @@ RTL8370N 在将 EEPROM 里的数据加载到 Register 中之后， 会自动切�
 ![My-Board-V2-2](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/pic/Board-V2.png)  
 
 
+关于这块板：LED 部分不知道能否正常工作。。。 BOM 在 JLC 那里有一份但是不全就懒得整理了。。。
+
 
 
 
