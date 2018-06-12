@@ -7,9 +7,9 @@
 ## 已有内容   
 ### 改造教程  
 
-[RTL8370N 芯片的 8 千兆交换机改 SR8808M 网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370N-SR8808M.md)  
-[RTL8367N 芯片的 5 千兆交换机改 GS105E v2 网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8367N-GS105Ev2.md)  
-RTL8382L+RTL8218B 芯片的 16 千兆交换机改网管 （在搞，近期整理下会写  
+[RTL8370N 芯片的 8 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370N-SR8808M.md)  
+[RTL8367N 芯片的 5 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8367N-GS105Ev2.md)  
+[RTL8382L+RTL8218B 芯片的 16 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8382L.md)   
 
 ### 各类 Datasheet
 注：这部分 Datasheet 全部来自于互联网，出处见 files 分支。 
