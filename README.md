@@ -9,6 +9,7 @@
 
 [RTL8370N 芯片的 8 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370N-SR8808M.md)  
 [RTL8367N 芯片的 5 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8367N-GS105Ev2.md)  
+注：RTL8370N/RTL8367N 等内置 8051 内核的交换芯片疑似需对内部 ROM 烧写代码后才能使用（见 [Issue #1](https://github.com/libc0607/Realtek_switch_hacking/issues/1)），而这段代码目前没有找到相关资料，意味着它可能不会从 Flash 启动。有大概率会翻，谨慎上车。  
 [RTL8382L+RTL8218B 芯片的 16 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8382L.md)   
 
 ### 各类 Datasheet
