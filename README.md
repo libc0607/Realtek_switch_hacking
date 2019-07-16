@@ -13,6 +13,8 @@
 
 [Telegram Channel](https://t.me/Realtek_Switch_Hacking)  
 
+部分 SDK 等体积较大的文件没有上传到 Github, 请到 Telegram Channel 搜索下载 
+
 总之网上东西很多搜搜就是了 XD  
 
 全部资料收集自互联网，意在学习相关硬件技术。如果违反了什么什么协议，请开个 issue 通知删除，带来不便非常抱歉！
