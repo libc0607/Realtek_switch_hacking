@@ -49,6 +49,7 @@
 ### 其他研究 
 [我自己搞的 RTL8370 板子](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370N-Demo.md)    
 [用 ESP8266 + NodeMCU 通过 SMI 控制 RTL8370 的尝试](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370-ESP8266.md)  
+[我自己搞的 RTL8367RB + ESP8266 板 (硬件全部开源在 LCEDA)](https://lceda.cn/libc0607/rtl8367rb-switch_copy)  
 
 ## License 协议
 本 Repo 下个人做出的研究分析，和那个 PCB 及其相关设计：遵从 CC BY-NC-SA 3.0 协议。  
