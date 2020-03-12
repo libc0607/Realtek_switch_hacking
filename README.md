@@ -41,10 +41,9 @@
 #### 驱动代码  
 注：驱动代码和芯片之间的对应关系通常因为马甲的存在而不容易确定  
 注2：这些除了 RTL8370 的几个 API 以外，我都没试过  
-[RTL8370(RTL8367?)](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8370_RTL8367_API.zip)  
 [RTL8325D](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/rtl8325d.zip)  
-[RTL8365MB(RTL8367S/RTL8367C?)](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/rtl8365mb.7z)  
-[RTL8367R](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/rtl8367r.zip)  
+[BootingUp/Realtek_Unmanaged_Switch_API_V1.3.12_20171124](https://github.com/BootingUp/Realtek_Unmanaged_Switch_API_V1.3.12_20171124)  
+其他的文档可以到 files 分支，或是 [Telegram channel](https://t.me/Realtek_Switch_Hacking) 下载  
 
 ### 其他研究 
 [我自己搞的 RTL8370 板子](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370N-Demo.md)    
