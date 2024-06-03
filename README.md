@@ -11,6 +11,7 @@
 [RTL8367N 芯片的 5 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8367N-GS105Ev2.md)  
 注：RTL8370N/RTL8367N 等内置 8051 内核的交换芯片疑似需对内部 ROM 烧写代码后才能使用（见 [Issue #1](https://github.com/libc0607/Realtek_switch_hacking/issues/1)），而这段代码目前没有找到相关资料，意味着它可能不会从 Flash 启动。有大概率会翻，谨慎上车。  
 [RTL8382L+RTL8218B 芯片的 16 千兆交换机改网管](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8382L.md)   
+[RTL8372/3 改网管机: up-n-atom/SWTG118AS](https://github.com/up-n-atom/SWTG118AS)  
 
 ### 各类 Datasheet
 注：这部分 Datasheet 全部来自于互联网，出处见 files 分支。 
@@ -29,7 +30,7 @@
 [RTL8370(M)](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8370(M).pdf)  
 [RTL8376](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8376_Datasheet_1.3.pdf)  
 [RTL8380M_RTL8382M_RTL8382L](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8380M_RTL8382M_RTL8382L.PDF)  
- 
+to-do: 许愿一个泄露的8372/8373  
  
 #### 路由器
 [RTL8196E](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/REALTEK-RTL8196E.pdf)  
@@ -50,6 +51,8 @@
 [用 ESP8266 + NodeMCU 通过 SMI 控制 RTL8370 的尝试](https://github.com/libc0607/RTL8370N_switch_hacking/blob/master/RTL8370-ESP8266.md)  
 [我自己搞的 RTL8367RB + ESP8266 板 (硬件全部开源在 LCEDA)](https://lceda.cn/libc0607/rtl8367rb-switch_copy)  
 [我自己搞的 RTL8382L 8口交换 (LCEDA)](https://lceda.cn/libc0607/rtl8382l-big-switch)  
+[Yakigani: RTL8370 iROM programmer](https://github.com/libc0607/Yakigani)  
+8372 分析: [0](https://forums.servethehome.com/index.php?threads/horaco-2-5gbe-managed-switch-8-x-2-5gbe-1-10gb-sfp.41571), [1](https://github.com/libc0607/Realtek_switch_hacking/issues/10), [2](https://github.com/libc0607/Yakigani/issues/1), [3](https://github.com/up-n-atom/SWTG118AS/issues/4), [Discord](https://discord.com/channels/886329492438671420/1178935426451525682) \(*Thanks to FanFansfan, up-n-atom, giver3, and error404 (from STH)) 
 
 ## License 协议
 本 Repo 下个人做出的研究分析，和那个 PCB 及其相关设计：遵从 CC BY-NC-SA 3.0 协议。  
