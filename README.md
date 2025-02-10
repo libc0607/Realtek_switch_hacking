@@ -30,6 +30,8 @@ RTL8372/3 改网管机，相关脚本：[up-n-atom/SWTG118AS](https://github.com
 [RTL8370(M)](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8370(M).pdf)  
 [RTL8376](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8376_Datasheet_1.3.pdf)  
 [RTL8380M_RTL8382M_RTL8382L](https://github.com/libc0607/RTL8370N_switch_hacking/blob/files/RTL8380M_RTL8382M_RTL8382L.PDF)  
+[RTL8367RB_RTL8367MB_Register_Table_V1.0.0.pdf](https://github.com/user-attachments/files/18147305/RTL8367RB_RTL8367MB_Register_Table_V1.0.0.pdf)  
+[RTL839X/93XX Series: plappermaul/realtek-doc](https://github.com/plappermaul/realtek-doc)  
 to-do: 许愿一个泄露的8372/8373  
  
 #### 路由器
